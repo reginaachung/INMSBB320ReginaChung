@@ -1,0 +1,386 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f6f8fb;
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 255px;
+    background-color: #1e1f26;
+    color: #fff;
+    padding: 30px 20px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: #2d2e36;
+}
+
+.sidebar li.active {
+    background-color: #fff;
+    color: #1e1f26;
+    font-weight: bold;
+}
+
+/* Main */
+.main {
+    flex-grow: 1;
+    padding: 30px 33px;
+    position: relative;
+}
+
+/* Grid Overlay */
+.custom-grid {
+    position: fixed;
+    top: 0;
+    left: 255px;
+    right: 0;
+    height: 100vh;
+    margin: 0 33px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.col-box {
+    background-color: rgba(255, 0, 0, 0.12);
+    height: 100vh;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    color: #1e1f26;
+}
+
+.user-info i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: border 0.3s ease;
+}
+
+.card-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.card-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1f26;
+}
+
+.card.active {
+    border: 2px solid #3c5eff;
+    color: #3c5eff;
+}
+
+.card.active .card-title,
+.card.active .card-number {
+    color: #3c5eff;
+}
+
+/* Section */
+.section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Trends Section */
+.trends-section {
+    display: flex;
+    gap: 30px;
+}
+
+.trends-left {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trends-header strong {
+    font-size: 18px;
+    color: #1e1f26;
+}
+
+.trends-header small {
+    font-size: 13px;
+    color: #888;
+    display: block;
+    margin-top: 4px;
+}
+
+.trends-chart img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 24px;
+}
+
+.trends-stats {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.stat {
+    padding: 28px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.stat:last-child {
+    border-bottom: none;
+}
+
+.stat .label {
+    font-size: 14px;
+    color: #999;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat .value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e1f26;
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    gap: 30px;
+}
+
+/* Tickets & Tasks Boxes */
+.tickets-box,
+.tasks-box {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 0 0 1px #eee;
+}
+
+/* Header */
+.tickets-header,
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.ticket-group,
+.task-date {
+    color: #9e9eaf;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.ticket-group span {
+    color: #3c5eff;
+}
+
+.ticket-list,
+.task-list {
+    padding-left: 0;
+}
+
+.ticket-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.ticket-list li:first-child {
+    border-top: none;
+}
+
+.ticket-list li span:first-child {
+    padding-left: 2px;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 12px;
+}
+
+.task-list li:first-child {
+    border-top: none;
+}
+
+.task-list .circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-left: 2px;
+    flex-shrink: 0;
+}
+
+.task-list .checked {
+    background-color: #3c5eff;
+    border-color: #3c5eff;
+}
+
+.task-title {
+    flex-grow: 1;
+    color: #1e1f26;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-left: 10px;
+}
+
+.badge.urgent {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge.new {
+    background-color: #26c281;
+}
+
+.badge.default {
+    background-color: #e6e6f2;
+    color: #9e9eaf;
+}
+
+.create-task {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.plus-btn {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #ccc;
+}
+
+/* ========== Tablet ========== */
+@media (min-width: 768px) {
+    .cards {
+        flex-direction: row;
+    }
+
+    .bottom-section {
+        flex-direction: row;
+    }
+
+    .tasks-box,
+    .tickets-box {
+        margin-bottom: 0;
+    }
+}
+
+/* ========== Desktop ========== */
+@media (min-width: 992px) {
+    .sidebar {
+        display: flex;
+    }
+
+    .main {
+        padding: 30px 33px;
+    }
+}
