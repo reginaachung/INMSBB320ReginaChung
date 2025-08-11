@@ -8,8 +8,9 @@
   "author": "Regina Chung",
   "license": "private",
   "private": true,
-  "description": "",
   "devDependencies": {
     "lite-server": "^2.6.1"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
