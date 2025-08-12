@@ -1,4 +1,4 @@
-        body {
+body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
             background-color: #f6f8fb;
@@ -70,6 +70,7 @@
 
         .dashboard-card {
             flex: 1;
+            min-width: 0;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
@@ -107,6 +108,17 @@
         .dashboard-card.active .card-title,
         .dashboard-card.active .card-number {
             color: #3c5eff;
+        }
+
+        /* New JSON Cards*/
+        .json-card {
+            border: 2px solid #28a745;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .json-card:hover {
+            border-color: #28a745;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
         }
 
         /* Trends Section */
@@ -291,7 +303,18 @@
             color: #ccc;
         }
 
-        /*  Mobile First */
+        /* Loading Animation */
+        .loading {
+            opacity: 0.5;
+            animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+
+        /* Mobile First */
         @media (max-width: 767px) {
             body {
                 flex-direction: column;

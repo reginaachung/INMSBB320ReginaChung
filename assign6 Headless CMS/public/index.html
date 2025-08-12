@@ -78,9 +78,27 @@
                 </div>
             </header>
 
-            <!-- Dashboard Cards -->
-            <section class="dashboard-cards">
-                <!-- Cards will be loaded from JSON -->
+            <!-- Dashboard Cards-->
+            <section class="dashboard-cards" id="dashboard-cards">
+                <!-- Original Cards -->
+                <div class="dashboard-card">
+                    <span class="card-title">Unresolved</span>
+                    <span class="card-number">60</span>
+                </div>
+                <div class="dashboard-card active">
+                    <span class="card-title">Overdue</span>
+                    <span class="card-number">16</span>
+                </div>
+                <div class="dashboard-card">
+                    <span class="card-title">Open</span>
+                    <span class="card-number">43</span>
+                </div>
+                <div class="dashboard-card">
+                    <span class="card-title">On hold</span>
+                    <span class="card-number">64</span>
+                </div>
+
+                <!--JSON Cards-->
             </section>
 
             <!-- Today's Trends Section -->
@@ -95,7 +113,26 @@
                     </div>
                 </article>
                 <aside class="trends-stats">
-                    <!-- Stats will be loaded from JSON -->
+                    <div class="stat">
+                        <span class="label">Resolved</span>
+                        <span class="value">449</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Received</span>
+                        <span class="value">426</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Average first response time</span>
+                        <span class="value">33m</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Average response time</span>
+                        <span class="value">3h 8m</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Resolution within SLA</span>
+                        <span class="value">94%</span>
+                    </div>
                 </aside>
             </section>
 
@@ -129,7 +166,7 @@
                     </ul>
                 </article>
 
-                <!-- Tasks (JS) -->
+                <!-- Tasks -->
                 <article class="content-box">
                     <div class="content-header">
                         <h3>Tasks</h3>
@@ -141,14 +178,27 @@
                         <span class="plus-btn">＋</span>
                     </div>
 
-                    <!-- Bootstrap Modal Trigger -->
-                    <button type="button" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal"
-                        data-bs-target="#taskModal">
-                        Launch Task Form
-                    </button>
+                    <!--Bootstrap Task List -->
+                    <div class="mt-3" id="json-tasks">
+                        <!-- JSON tasks -->
+                    </div>
 
-                    <ul class="content-list task-list">
-                        <!-- Tasks will be loaded from JSON -->
+                    <ul class="content-list task-list" id="task-list">
+                        <li>
+                            <span class="task-circle"></span>
+                            <span class="task-title">Finish ticket update</span>
+                            <span class="badge urgent">URGENT</span>
+                        </li>
+                        <li>
+                            <span class="task-circle"></span>
+                            <span class="task-title">Create new ticket example</span>
+                            <span class="badge new">NEW</span>
+                        </li>
+                        <li>
+                            <span class="task-circle checked"></span>
+                            <span class="task-title">Update ticket report</span>
+                            <span class="badge default">DEFAULT</span>
+                        </li>
                     </ul>
                 </article>
             </section>
@@ -161,24 +211,17 @@
             <div class="modal-content">
                 <form>
                     <div class="modal-header">
-                        <h5 class="modal-title" id="taskModalLabel">
-                            Create New Task
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
+                        <h5 class="modal-title" id="taskModalLabel">Create New Task</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="taskTitle" class="form-label">
-                                Task Title
-                            </label>
+                            <label for="taskTitle" class="form-label">Task Title</label>
                             <input type="text" class="form-control" id="taskTitle" required>
                         </div>
                         <div class="mb-3">
-                            <label for="taskPriority" class="form-label">
-                                Priority
-                            </label>
+                            <label for="taskPriority" class="form-label">Priority</label>
                             <select class="form-select" id="taskPriority" required>
                                 <option value="">Choose...</option>
                                 <option value="urgent">Urgent</option>
@@ -189,12 +232,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">
-                            Add Task
-                        </button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancel
-                        </button>
+                        <button type="submit" class="btn btn-success">Add Task</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     </div>
                 </form>
             </div>
