@@ -1,0 +1,16 @@
+{
+  "name": "inm320sbb-regina-chung-assign5-frontend-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server --baseDir=\"public\""
+  },
+  "author": "Regina Chung",
+  "license": "private",
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "keywords": [],
+  "description": ""
+}
